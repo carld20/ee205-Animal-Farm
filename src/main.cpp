@@ -16,6 +16,7 @@
 #include <cassert>  // For assert()
 #include <exception>  // For try/catch blocks
 #include <iostream>
+#include <cstring>
 
 #include "Cat.h"
 #include "catDatabase.h"
@@ -49,7 +50,7 @@ int main() {
       assert(testCat.getBreed() == UNKNOWN_BREED);
       assert(testCat.isFixed() == false);
       assert(testCat.getWeight() == UNKNOWN_WEIGHT);
-      assert(testCatg.getCollarColor() == White);
+      assert(testCat.getCollarColor() == White);
       assert(!testCat.isFixed());
       assert(!testCat.validate());  // The default cat is invalid
 
@@ -104,29 +105,29 @@ int main() {
       assert(testCat.validate());  // The cat should now be valid
       testCat.print() ;
 
-      assert(!isCatInDatabase(&testCat)) ;
+      assert(!isCatExist(&testCat)) ;
    }
 #endif
 
     bool result ;
-    result = addCat( new Cat( "Dominick", Female, MAINE_COON, 15.0, Black )) ;
+    result = addCat( new Cat( "Dominick", FEMALE, MAINE_COON, 15.0, Black )) ;
     assert( result ) ;
     if( !result ) throw logic_error ("Animal Farm2: addCat() failed" ) ;
-    result = addCat( new Cat( "Seabass", Male, PERSIAN , 2.3, White )) ;
+    result = addCat( new Cat( "Seabass", MALE, PERSIAN , 2.3, White )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Brae", Female, PERSIAN, 19.7, Red )) ;
+    result = addCat( new Cat( "Brae", FEMALE, PERSIAN, 19.7, Red )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Kebin", Female, MANX, 25.9, Blue )) ;
+    result = addCat( new Cat( "Kebin", FEMALE, MANX, 25.9, Blue )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Kurris", Male, SHORTHAIR, 13.4, Blue )) ;
+    result = addCat( new Cat( "Kurris", MALE, SHORTHAIR, 13.4, Blue )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Paul", Male, MAINE_COON, 8.2, Green )) ;
+    result = addCat( new Cat( "Paul", MALE, MAINE_COON, 8.2, Green )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Dan Dan", Female, MANX, 22.3, Pink )) ;
+    result = addCat( new Cat( "Dan Dan", FEMALE, MANX, 22.3, Pink )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Alden", Male, PERSIAN, 32.1, Red )) ;
+    result = addCat( new Cat( "Alden", MALE, PERSIAN, 32.1, Red )) ;
     assert( result ) ;
-    result = addCat( new Cat( "Jeriel", Female, MAINE_COON, 15.7, White )) ;
+    result = addCat( new Cat( "Jeriel", FEMALE, MAINE_COON, 15.7, White )) ;
     assert( result ) ;
 
 #ifdef DEBUG

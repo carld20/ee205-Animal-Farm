@@ -24,7 +24,7 @@ using namespace std;
 
 void Cat::zeroOutMember() {
     memset(name, 0, MAX_CAT_NAME);
-    gender = Unknown;
+    gender = UNKNOWN_GENDER;
     breed = UNKNOWN_BREED;
     isCatFixed = false;
     weight = UNKNOWN_WEIGHT;
@@ -143,7 +143,7 @@ bool Cat::validateName( const char *newName ){
 }
 
 bool Cat::validateGender( const Genders newGender ){
-    if ( newGender == Unknown ) {
+    if ( newGender == UNKNOWN_GENDER ) {
         throw invalid_argument("Animal Farm2: gender must be specified");
     }
 
@@ -198,7 +198,7 @@ void Cat::setCollarColor(Colors newCollarColor) {
 }
 
 void Cat::setGender(Genders newGender) {
-    if( gender != Unknown ) {
+    if( gender != UNKNOWN_GENDER ) {
         throw logic_error("Animal Farm2: gender is set, can't be changed");
 
     }

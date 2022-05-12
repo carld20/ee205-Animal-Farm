@@ -21,7 +21,7 @@ typedef size_t NumCats;
 const Weight UNKNOWN_WEIGHT = -1;
 
 
-enum Genders { Male, Female, Unknown };
+enum Genders { MALE, FEMALE, UNKNOWN_GENDER };
 enum Breeds { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX };
 enum Colors { Black, White, Red, Blue, Green, Pink, Clear };
 

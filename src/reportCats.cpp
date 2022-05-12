@@ -49,11 +49,11 @@ Cat* findCatByName( const char* name ){
 
 const char* genderCat( const enum Genders gender ){
     switch( gender ) {
-        case Unknown:
+        case UNKNOWN_GENDER:
             return "Unknown";
-        case Male:
+        case MALE:
             return "Male";
-        case Female:
+        case FEMALE:
             return "Female";
     }
     throw logic_error("Animal Farm2: gender name not mapped to string value");
