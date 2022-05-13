@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include <glob.h>
+#include <stdio.h>
 
 #define MAX_CATS (30)
 #define MAX_CAT_NAME (30)
